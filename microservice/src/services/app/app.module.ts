@@ -4,10 +4,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { AllExceptionsFilter } from '../../common/filters/exceptions.filter';
 import { UserModule } from '../user/user.module';
-
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/user-authenticity', {
+    MongooseModule.forRoot(`${process.env.database}`, {
       useNewUrlParser: true,
       useFindAndModify: true,
       useUnifiedTopology: true,

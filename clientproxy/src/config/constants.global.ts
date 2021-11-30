@@ -8,7 +8,7 @@ export interface ResponseInterface {
 
 export const client = async (pattern, data) => {
   const client = new ClientTCP({
-    host: 'localhost',
+    host: 'microservice',
     port: 3000,
   });
   await client.connect();

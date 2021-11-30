@@ -48,6 +48,8 @@ export class AuthController {
       });
       return response;
     } catch (e) {
+      console.log(e);
+      console.log(e);
       throw new InternalServerErrorException(e);
     }
   }
