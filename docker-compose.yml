@@ -40,5 +40,5 @@ services:
       - microservice
     ports:
       - 4000:4000
-    command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npm run start:debug'
+    # command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npm run start:debug'
     restart: always

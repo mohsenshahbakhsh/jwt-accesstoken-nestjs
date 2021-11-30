@@ -1,10 +1,10 @@
 {
-  "name": "user-auth-clientproxy",
+  "name": "clientproxy",
   "version": "0.0.1",
   "description": "",
-  "author": "mohsen shahbakhsh",
+  "author": "",
   "private": true,
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
