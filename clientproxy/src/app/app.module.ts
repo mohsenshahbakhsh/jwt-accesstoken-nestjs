@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 
 import { APP_FILTER } from '@nestjs/core';
 
-import { HttpExceptionFilter } from '../../common/filters/http-exception.filter';
+import { HttpExceptionFilter } from '../common/filters/http-exception.filter';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from '../auth/auth.module';

@@ -2,14 +2,14 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { Transport, MicroserviceOptions } from '@nestjs/microservices';
 import * as cookieParser from 'cookie-parser';
-import { AppModule } from './APIs/app/app.module';
+import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.TCP,
     options: {
-      host: '0.0.0.0',
+      host: 'microservice',
       port: 3000,
       retryAttempts: 5,
       retryDelay: 3000,

@@ -7,7 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 import { ClientProxy } from '@nestjs/microservices';
 import * as bcrypt from 'bcrypt';
 
-import { ResponseInterface } from '../../config/constants.global';
+import { ResponseInterface } from '../config/constants.global';
 import { UserInterface } from '../user/interfaces/user.interface';
 import { TokenBearerInterface } from './interfaces/bearer.token.interface';
 

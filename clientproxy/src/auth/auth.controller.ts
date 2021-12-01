@@ -13,7 +13,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import { AuthGuard } from '@nestjs/passport';
 import { Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import { ResponseInterface } from '../../config/constants.global';
+import { ResponseInterface } from '../config/constants.global';
 import { UserInterface } from '../user/interfaces/user.interface';
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
