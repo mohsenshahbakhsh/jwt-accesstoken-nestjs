@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { AllExceptionsFilter } from '../../common/filters/exceptions.filter';
 import { UserModule } from '../user/user.module';
+import { AuthModule } from '../auth/auth.module';
 @Module({
   imports: [
     MongooseModule.forRoot(`${process.env.database}`, {
@@ -13,6 +14,7 @@ import { UserModule } from '../user/user.module';
       useCreateIndex: true,
     }),
     UserModule,
+    AuthModule,
   ],
   providers: [
     {

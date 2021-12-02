@@ -3,9 +3,12 @@ services:
   mongo:
     image: mongo
     container_name: mongo
+    hostname: mongo
     # command: mongod --port 27027
     ports:
       - 27017:27017
+    networks:
+      - backend
     # environment:
     # MONGO_INITDB_ROOT_USERNAME: admin
     # MONGO_INITDB_ROOT_PASSWORD: foobar
@@ -16,6 +19,7 @@ services:
 
   microservice:
     container_name: microservice
+    hostname: microservice
     image: microservice:1.0.0
     build:
       context: ./microservice
@@ -23,15 +27,20 @@ services:
     depends_on:
       - mongo
     ports:
-      - 3000:3000
+      - "3000:3000"
+    expose:
+      - "3000"
     # volumes:
     # - api-logs:/var/local/applogs
     environment:
       - database='mongodb://mongo/user-authenticity'
+    networks:
+      - backend
     restart: always
 
   clientproxy:
     container_name: clientproxy
+    hostname: clientproxy
     image: clientproxy:1.0.0
     build:
       context: ./clientproxy
@@ -40,5 +49,10 @@ services:
       - microservice
     ports:
       - 4000:4000
-    # command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npm run start:debug'
+    networks:
+      - backend
     restart: always
+networks:
+  backend:
+    driver: bridge
+

@@ -9,14 +9,14 @@ async function bootstrap() {
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.TCP,
     options: {
-      host: 'microservice',
+      host: '0.0.0.0',
       port: 3000,
       retryAttempts: 5,
       retryDelay: 3000,
     },
   });
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
-  // app.enableCors({ credentials: true, origin: 'http://localhost:3006' });
+  app.enableCors({ credentials: true, origin: 'http://localhost:3006' });
   app.use(cookieParser());
   await app.listen(4000);
   console.log(`Application is running on: ${await app.getUrl()}`);

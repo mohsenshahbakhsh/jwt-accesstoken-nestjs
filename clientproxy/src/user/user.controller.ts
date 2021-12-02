@@ -28,6 +28,7 @@ export class UserController {
         .toPromise();
       return response;
     } catch (e) {
+      console.log(e);
       if (e.body.status == 422) throw new UnprocessableEntityException(e);
       throw new InternalServerErrorException(e);
     }
