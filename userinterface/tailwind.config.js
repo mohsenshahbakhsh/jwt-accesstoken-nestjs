@@ -10,7 +10,6 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#4458FE",
         "normal-gray": "rgba(23, 62, 103, 0.5)",
         divideColor: "#EFF3F6",
         "secondary-text-color": "rgba(23, 62, 103, 0.6)",
