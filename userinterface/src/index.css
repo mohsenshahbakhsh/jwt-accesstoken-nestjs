@@ -38,12 +38,12 @@
 }
 @layer components {
   .btn {
-    @apply w-64 font-RubikRegular text-sm font-medium p-2 bg-primary text-white border-none rounded-lg;
+    @apply w-64 font-RubikRegular text-sm font-medium p-2 text-white border-none rounded-lg;
   }
   .btn-dashbord {
-    @apply w-full font-RubikRegular text-sm font-medium p-2 space-x-4 inline-flex items-center focus:bg-primary focus:text-white border-none rounded-lg;
+    @apply w-full font-RubikRegular text-sm font-medium p-2 space-x-4 inline-flex items-center focus:text-white border-none rounded-lg;
   }
   .square-dashbord {
-    @apply w-2 h-2 border rounded-sm border-transparent bg-primary opacity-25;
+    @apply w-2 h-2 border rounded-sm border-transparent opacity-25;
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import opensource from "./assets/images/open-source-logo.png";
+import opensource from "../assets/images/open-source-logo.png";
 
 const Navbar = () => {
   return (
