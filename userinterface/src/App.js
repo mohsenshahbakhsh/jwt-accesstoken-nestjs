@@ -1,11 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./components/Navbar.js";
+import Header from "./components/Header.js";
+import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="w-full h-full bg-black">
-      <Navbar />
+    <div className="w-full h-full">
+      <Header />
+      <div className="p-5">
+        <Body />
+      </div>
     </div>
   );
 }
