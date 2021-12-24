@@ -1,14 +1,13 @@
 import React from "react";
-import opensource from "../assets/images/open-source-logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="w-full h-20 flex flex-row items-center justify-between font-RubikRegular z-10 p-5 border">
+    <nav className="w-full h-16 flex flex-row items-center justify-between font-RubikRegular z-10 p-5 border">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        width="64"
-        height="64"
+        width="32"
+        height="32"
       >
         <path fill="none" d="M0 0H24V24H0z" />
         <path
@@ -16,9 +15,9 @@ const Navbar = () => {
           fill="rgba(52,72,94,1)"
         />
       </svg>
-      <h4 className="text-primary font-bold">user authintication</h4>
+      <h4 className="text-primary">user authintication</h4>
       <a
-        className="bg-primary bg-opacity-90 rounded-md px-6 py-3 text-white"
+        className="bg-primary bg-opacity-90 rounded-md px-4 py-2 text-sm text-white"
         href="https://github.com/mohsenshahbakhsh/userauth-microservice-nestjs-docker"
       >
         Source
