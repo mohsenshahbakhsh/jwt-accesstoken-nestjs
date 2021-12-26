@@ -1,8 +1,8 @@
 import React from "react";
 
-const Navbar = () => {
+const Header = () => {
   return (
-    <nav className="w-full h-16 flex flex-row items-center justify-between font-RubikRegular z-10 p-5 border">
+    <nav className="w-full h-16 relative top-0 flex flex-row items-center justify-between font-RubikRegular z-10 p-5 border">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -26,4 +26,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
