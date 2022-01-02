@@ -4,9 +4,11 @@ import UserTable from "./UserTable";
 
 const User = () => {
   return (
-    <div className="container h-auto p-5 flex flex-col space-y-8 justify-start">
+    <div className="container p-5 flex flex-col space-y-8 justify-start rounded shadow">
       {/* user signup */}
-      <SignUpForm />
+      <div>
+        <SignUpForm />
+      </div>
       {/* users list */}
       <div className="border rounded-md shadow">
         <UserTable

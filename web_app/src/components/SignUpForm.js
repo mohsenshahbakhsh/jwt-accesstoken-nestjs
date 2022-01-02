@@ -2,20 +2,20 @@ import React from "react";
 
 const SignUpForm = () => {
   return (
-    <form className="w-full space-y-2">
+    <form className="flex flex-col space-y-2">
       <input
         type="text"
-        className="w-full border rounded-md p-2 focus:border-none"
+        className="border rounded-md p-2"
         placeholder="username"
       />
       <input
         type="password"
-        className="w-full border rounded-md p-2 focus:border-none"
+        className="border rounded-md p-2"
         placeholder="password"
       />
       <input
         type="submit"
-        className="w-full rounded-md py-2 text-white bg-primary cursor-pointer"
+        className="rounded-md py-2 text-white bg-primary cursor-pointer"
         value="signup"
       />
     </form>
