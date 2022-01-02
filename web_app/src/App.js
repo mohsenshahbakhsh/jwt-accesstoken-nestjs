@@ -1,14 +1,14 @@
 import "./App.css";
 import Header from "./components/Header";
-import Body from "./components/Body";
 import Footer from "./components/Footer";
+import User from "./components/User";
 
 function App() {
   return (
     <div className="w-screenh-screen">
       <Header />
       <div className="relative p-5">
-        <Body />
+        <User />
       </div>
       <Footer />
     </div>

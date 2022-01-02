@@ -1,9 +1,9 @@
 import React from "react";
 
-const SignUpForm = () => {
+const SignInForm = () => {
   return (
     <form className="flex flex-col space-y-2">
-      <h5 className="w-full text-primary text-center mb-2">Sign Up</h5>
+      <h5 className="w-full text-primary text-center mb-2">Log In</h5>
       <input
         type="text"
         className="border rounded-md p-2"
@@ -17,10 +17,10 @@ const SignUpForm = () => {
       <input
         type="submit"
         className="rounded-md py-2 text-white bg-primary cursor-pointer"
-        value="Sign Up"
+        value="Login"
       />
     </form>
   );
 };
 
-export default SignUpForm;
+export default SignInForm;
