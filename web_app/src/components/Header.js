@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav className="w-full h-16 relative top-0 flex flex-row items-center justify-between font-RubikRegular z-10 p-5 border">
+    <header className="w-full h-16 relative top-0 flex flex-row items-center justify-between font-RubikRegular z-10 p-5 border">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -22,7 +22,7 @@ const Header = () => {
       >
         Source
       </a>
-    </nav>
+    </header>
   );
 };
 
