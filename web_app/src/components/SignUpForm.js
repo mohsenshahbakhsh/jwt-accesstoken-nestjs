@@ -3,6 +3,7 @@ import React from "react";
 const SignUpForm = () => {
   return (
     <form className="flex flex-col space-y-2">
+      <label className="w-full text-primary text-center mb-2">Sign Up</label>
       <input
         type="text"
         className="border rounded-md p-2"
