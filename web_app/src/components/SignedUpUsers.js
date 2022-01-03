@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserTable = ({ userList }) => {
+const SignedUpUsersTabel = ({ userList }) => {
   const users = userList.map((item, index) => {
     return (
       <tr className="bg-white border-b">
@@ -8,7 +8,7 @@ const UserTable = ({ userList }) => {
           {item.username}
         </td>
         <td className="py-4 px-6 text-sm text-gray-700 whitespace-nowrap">
-          {item.username}
+          {item.password}
         </td>
         <td className="py-4 px-6 text-sm text-gray-700 whitespace-nowrap">
           <button className="text-sm bg-red-500 py-1 px-2 rounded-lg text-white">
@@ -59,4 +59,4 @@ const UserTable = ({ userList }) => {
   );
 };
 
-export default UserTable;
+export default SignedUpUsersTabel;

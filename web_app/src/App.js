@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="w-screenh-screen">
       <Header />
-      <div className="relative p-5">
+      <div className="p-5">
         <User />
       </div>
       <Footer />

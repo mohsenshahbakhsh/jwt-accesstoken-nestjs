@@ -1,8 +1,8 @@
 import React from "react";
 
-const SignInForm = () => {
+const LogInForm = () => {
   return (
-    <form className="flex flex-col space-y-2">
+    <form className="w-full flex flex-col space-y-2">
       <h5 className="w-full text-primary text-center mb-2">Log In</h5>
       <input
         type="text"
@@ -23,4 +23,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default LogInForm;
