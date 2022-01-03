@@ -11,7 +11,9 @@ const UserTable = ({ userList }) => {
           {item.username}
         </td>
         <td className="py-4 px-6 text-sm text-gray-700 whitespace-nowrap">
-          {item.username}
+          <button className="text-sm bg-red-500 py-1 px-2 rounded-lg text-white">
+            delete
+          </button>
         </td>
       </tr>
     );
@@ -39,9 +41,7 @@ const UserTable = ({ userList }) => {
                   <th
                     scope="col"
                     className="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
-                  >
-                    response
-                  </th>
+                  ></th>
                   <th
                     scope="col"
                     className="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
