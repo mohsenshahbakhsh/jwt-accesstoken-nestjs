@@ -3,25 +3,58 @@ import React from "react";
 const UserTable = ({ userList }) => {
   const users = userList.map((item, index) => {
     return (
-      <tr>
-        <td className="px-6 py-2 text-gray-500">{++index}</td>
-        <td className="px-6 py-2">{item.username}</td>
-        <td className="px-6 py-2">{item.password}</td>
+      <tr className="bg-white border-b">
+        <td className="py-4 px-6 text-sm text-gray-700 whitespace-nowrap">
+          {item.username}
+        </td>
+        <td className="py-4 px-6 text-sm text-gray-700 whitespace-nowrap">
+          {item.username}
+        </td>
+        <td className="py-4 px-6 text-sm text-gray-700 whitespace-nowrap">
+          {item.username}
+        </td>
       </tr>
     );
   });
   return (
-    <div className="container flex justify-start">
-      <table className="container table-auto text-primary">
-        <thead className="bg-gray-200">
-          <tr>
-            <th className="px-6 py-2">id</th>
-            <th className="px-6 py-2">username</th>
-            <th className="px-6 py-2">password</th>
-          </tr>
-        </thead>
-        <tbody className="container">{users}</tbody>
-      </table>
+    <div className="flex flex-col">
+      <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded shadow">
+            <table className="min-w-full text-primary">
+              <thead className="bg-gray-100 text-gray-400">
+                <tr>
+                  <th
+                    scope="col"
+                    className="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    username
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-3 px-6 text-xs font-medium tracking-wider text-left  uppercase"
+                  >
+                    password
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    response
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    {""}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>{users}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

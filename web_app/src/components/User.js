@@ -10,16 +10,14 @@ const User = () => {
         {/* user signup */}
         <SignUpForm />
         {/* users list */}
-        <div className="border rounded-md shadow">
-          <UserTable
-            userList={[
-              { username: "john", password: "dontbe" },
-              { username: "mike", password: "whythefuck" },
-              { username: "debby", password: "gust" },
-              { username: "fiona", password: "sober" },
-            ]}
-          />
-        </div>
+        <UserTable
+          userList={[
+            { username: "john", password: "dontbe" },
+            { username: "mike", password: "whythefuck" },
+            { username: "debby", password: "gust" },
+            { username: "fiona", password: "sober" },
+          ]}
+        />
       </div>
       <div className="w-1/4 container border rounded-lg shadow p-5">
         <SignInForm />
