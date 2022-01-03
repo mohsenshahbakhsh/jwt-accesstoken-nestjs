@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="w-full h-16 sticky top-0 z-50 flex flex-row items-center justify-between font-RubikRegular p-5 border-b bg-primary">
+    <header className="w-full h-16 sticky top-0 z-50 flex flex-row items-center justify-between font-RubikRegular p-5 rounded-b-sm bg-primary">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
