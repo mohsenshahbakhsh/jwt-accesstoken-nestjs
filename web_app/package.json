@@ -1,5 +1,5 @@
 {
-  "name": "catvey-panel",
+  "name": "user-auth",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
