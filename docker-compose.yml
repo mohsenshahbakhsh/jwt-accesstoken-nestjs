@@ -1,58 +1,13 @@
 version: "3.3"
 services:
-  mongo:
-    image: mongo
-    container_name: mongo
-    hostname: mongo
-    # command: mongod --port 27027
-    ports:
-      - 27017:27017
-    networks:
-      - backend
-    # environment:
-    # MONGO_INITDB_ROOT_USERNAME: admin
-    # MONGO_INITDB_ROOT_PASSWORD: foobar
-    # MONGO_INITDB_DATABASE: db
-    # volumes:
-    # - /etc/mongod.conf:/etc/mongod.conf.orig
-    restart: always
 
-  microservice:
-    container_name: microservice
-    hostname: microservice
-    image: microservice:1.0.0
+  authcontainer:
+    container_name: authcontainer
+    hostname: authcontainer
+    image: authcontainer
     build:
-      context: ./microservice
+      context: ./
       dockerfile: Dockerfile
-    depends_on:
-      - mongo
-    ports:
-      - "3000:3000"
-    expose:
-      - "3000"
-    # volumes:
-    # - api-logs:/var/local/applogs
-    environment:
-      - database='mongodb://mongo/user-authenticity'
-    networks:
-      - backend
-    restart: always
-
-  clientproxy:
-    container_name: clientproxy
-    hostname: clientproxy
-    image: clientproxy:1.0.0
-    build:
-      context: ./clientproxy
-      dockerfile: Dockerfile
-    depends_on:
-      - microservice
     ports:
       - 4000:4000
-    networks:
-      - backend
-    restart: always
-networks:
-  backend:
-    driver: bridge
 
