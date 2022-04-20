@@ -16,7 +16,7 @@ import { UserInterface } from "./interfaces/user.interface";
 import { AuthService } from "./auth.service";
 import { LocalAuthGuard } from "./guards/local-auth.guard";
 import { JwtAuthGuard } from "./guards/jwt-auth.guard";
-import { TokenBearerInterface } from "./interfaces/bearer.token.interface";
+import { TokenBearerInterface } from "./interfaces/token.interface";
 
 @Controller("auth")
 export class AuthController {
@@ -29,16 +29,19 @@ export class AuthController {
     @Res({ passthrough: true }) res: Response
   ): Promise<ResponseInterface> {
     try {
-      const login: TokenBearerInterface = await this.authService.login(user);
+      const login = await this.authService.login(user);
       const response: ResponseInterface = {
         success: true,
         body: login,
       };
       res.cookie("access-token", login.access_token, {
         path: "/",
-        expires: new Date(2025, 12, 12),
-        // maxAge: 1000 * 1000,
-        // sameSite: 'lax',
+        expires: new Date(new Date().getFullYear() + 1, 12, 12),
+        httpOnly: true,
+      });
+      res.cookie("refresh-token", login.refresh_token, {
+        path: "/",
+        expires: new Date(new Date().getFullYear() + 1, 12, 12),
         httpOnly: true,
       });
       return response;
@@ -53,6 +56,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   async profile(@Req() req): Promise<ResponseInterface> {
     try {
+      console.log(req.cookies);
       const response: ResponseInterface = {
         success: true,
         body: { username: req.user.username },

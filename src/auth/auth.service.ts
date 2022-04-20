@@ -10,7 +10,8 @@ import { JwtService } from "@nestjs/jwt";
 import * as bcrypt from "bcrypt";
 
 import { UserInterface } from "./interfaces/user.interface";
-import { TokenBearerInterface } from "./interfaces/bearer.token.interface";
+import { TokenBearerInterface } from "./interfaces/token.interface";
+import jwtConstants from "./constants";
 
 @Injectable()
 export class AuthService {
@@ -53,10 +54,9 @@ export class AuthService {
           username: user_record.username,
           sub: user_record.id,
         };
-        const access_token: TokenBearerInterface = {
-          access_token: this.jwtService.sign(payload),
-        };
-        return access_token;
+        const access_token = this.jwtService.sign(payload, {keyid:"access"});
+        const refresh_token = this.jwtService.sign(payload, {keyid:"refresh"});
+        return { access_token, refresh_token };
       }
       return null;
     } catch (e) {
